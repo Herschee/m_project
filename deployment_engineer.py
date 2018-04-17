@@ -13,13 +13,8 @@ def scan_input():
 	df_enrollment = df.parse("Enrollment Data")
 	df_event_data = df.parse("Event Data")
 	df_survey_data = df.parse("Survey Response Data")
-<<<<<<< HEAD
 	# df_module_date = df.parse("Message Reference Sheet")
 	# df_survey_ref = df.parse("Survey Reference Sheet")
-=======
-	df_module_date = df.parse("Message Reference Sheet")
-	df_survey_ref = df.parse("Survey Reference Sheet")
->>>>>>> 131d71f292069b4d9e7ba62ba549aaa1b5765a18
 
 
 	# questions 1-2
@@ -37,7 +32,6 @@ def scan_input():
 		if isCompleted(row) or isCancelled(row) or isScheduled(row):
 			question_one_sum += 1
 
-		# pd.to_datetime()
 		if asFrom('3/28/2018', row) and completedModule(row, df_event_data):
 			completed_modules.add(row['Patient Id'])
 
