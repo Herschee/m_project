@@ -14,7 +14,7 @@ def scan_input():
 	df_event_data = df.parse("Event Data")
 	df_survey_data = df.parse("Survey Response Data")
 	df_module_date = df.parse("Message Reference Sheet")
-	df_survey_ref = df.parse("Survey Reference Sheet", ignore_index=True)
+	df_survey_ref = df.parse("Survey Reference Sheet")
 
 
 	# questions 1-2
