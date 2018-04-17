@@ -9,13 +9,9 @@ Henry Wrightman
 ### Assumptions
 - Patients with > 1 procedure are listed as separate entries (rows)
 - Types: 'FLEX BRONCH WITH BAL or TRANS BRONCH BX' are two distinct type entries
-- As per unique case, we'll always ensure that they're listed in Tour_One; they may however be in Tour_Three as well, given ordering
-- Greater than 1 procedures on the same day NOT equaling the above criteria -> 'multiple_enroll' list
 - Each patient has at least one procedure scheduled on a given date (per entry)
 
-For the logic, please refer to pulmonary_feed.py
-
-Essentially, the main criteria is handled using straight forward predicates. The tour predicates, (distinguish tour based off of procedure) as well as the more complex, unique cases for more than one procedure per patient, are handled internally within the patient class when adding a new procedure (given that this patient has already been scheduled for another procedure prior). 
+For the core logic - sorting into tour, unique cases, etc please refer to patient.py. pulmonary_feed.py handles initial criteria; in this case language=English & >= 2 days until scheduled procedure.
 
 ## Medumo Deployment Engineer - Data Analysis
 ### Assumptions
