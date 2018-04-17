@@ -6,7 +6,7 @@ Henry Wrightman
 - Python (pandas)
 
 ## Medumo Programming Assignment
-###Assumptions
+### Assumptions
 - Patients with > 1 procedure are listed as separate entries (rows)
 - Types: 'FLEX BRONCH WITH BAL or TRANS BRONCH BX' are two distinct type entries
 - As per unique case, we'll always ensure that they're listed in Tour_One; they may however be in Tour_Three as well, given ordering
@@ -18,7 +18,7 @@ For the logic, please refer to pulmonary_feed.py
 Essentially, the main criteria is handled using straight forward predicates. The tour predicates, (distinguish tour based off of procedure) as well as the more complex, unique cases for more than one procedure per patient, are handled internally within the patient class when adding a new procedure (given that this patient has already been scheduled for another procedure prior). 
 
 ## Medumo Deployment Engineer - Data Analysis
-###Assumptions
+### Assumptions
 - 'Module views' are when an Event has an Event_Name = 'Node_Viewed'
 - ‘Module completion’ is dictated as Event marked with Event_Name = ‘User_completed_module’
 
