@@ -13,8 +13,13 @@ def scan_input():
 	df_enrollment = df.parse("Enrollment Data")
 	df_event_data = df.parse("Event Data")
 	df_survey_data = df.parse("Survey Response Data")
+<<<<<<< HEAD
+	# df_module_date = df.parse("Message Reference Sheet")
+	# df_survey_ref = df.parse("Survey Reference Sheet")
+=======
 	df_module_date = df.parse("Message Reference Sheet")
 	df_survey_ref = df.parse("Survey Reference Sheet")
+>>>>>>> 131d71f292069b4d9e7ba62ba549aaa1b5765a18
 
 
 	# questions 1-2
@@ -49,17 +54,19 @@ def scan_input():
 
 	# calculate completion rates with both views & completed dictionarys
 	completion_rates = dict((k, float(mod_completed[k])/mod_views[k]) for k in mod_completed)
+	# sort; by value descending
+	completion_rates_sorted = sorted(completion_rates.items(), key=lambda x: x[1], reverse=True)
 	
 	if (len(mod_views) > 0):
 		question_three = list(mod_views.keys())[0]
 	if (len(completion_rates) > 0):
-		question_four = list(completion_rates.keys())[0]
+		question_four = completion_rates_sorted[0] # highest completion rate module
 
 	question_five = surveyResponseCount(df_survey_data, 'Are you satisfied with your care? ', 'Yes')
 	
 
-	print("Higest viewed module: " + str(question_three))
-	print("Highest completion rate module: " + str(question_four))
+	print("Higest viewed module: " + str(question_three) + " " + str(mod_views))
+	print("Highest completion rate module: " + str(question_four) + " " + str(completion_rates))
 	print("Those satisfied with their care: " + str(question_five))
 
 
