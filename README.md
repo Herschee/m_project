@@ -10,8 +10,11 @@ Henry Wrightman
 - Patients with > 1 procedure are listed as separate entries (rows)
 - Types: 'FLEX BRONCH WITH BAL or TRANS BRONCH BX' are two distinct type entries
 - Each patient has at least one procedure scheduled on a given date (per entry)
+- Each patient entry data is static, aside from procedure types & dates.
 
 For the core logic - sorting into tour, unique cases, etc please refer to patient.py. pulmonary_feed.py handles initial criteria; in this case language=English & >= 2 days until scheduled procedure.
+
+I am aware, that with the approach I took to store each patient once assigning their respective tour, that any data outside of procedure type & procedure date would be overritten - though I assumed the remaining information was relatively static. This enables me to store each patient into a dictionary (with their name as the key), and their extended procedure(s) & date(s) in another dictionary - with the date as the key. In the event another bit of information was dynamic (say some ID), I'd adjust the patient object accordingly to store each ID. 
 
 ## Medumo Deployment Engineer - Data Analysis
 ### Assumptions
